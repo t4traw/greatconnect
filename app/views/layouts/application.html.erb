@@ -23,64 +23,75 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
-          <span><%= image_tag "icon/logo.png", class: "navbar-brand" %></span>
+          <p class="navbar-brand">GreatConnect</p> 
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <%= image_tag "icon/home.png" %>
+                <p>ホーム</p>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <%= image_tag "icon/post.png" %>
+                <%= image_tag "icon/post.png", class: "abcd" %>
+                <p>投稿する</p>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <%= image_tag "icon/list of posts.png" %>
+                <%= image_tag "icon/list of posts.png", class: "abcd" %>
+                <p>マーケット</p>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <%= image_tag "icon/message.png" %>
+                <%= image_tag "icon/message3.png", class: "abcd" %>
+                <p>メッセージ</p>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <%= image_tag "icon/favorite.png" %>
+                <%= image_tag "icon/favorite.png", class: "abcd" %>
+                <p>お気に入り</p>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <%= image_tag "icon/myposts.png" %>
+                <%= image_tag "icon/myposts.png", class: "abcd" %>
+                <p>自分の投稿</p>
               <% end %>
             </li>
             <li>
               <%= link_to logout_path, method: :delete do %>
-                <%= image_tag "icon/logout.png" %>
+                <%= image_tag "icon/logout.png", class: "abcd" %>
+                <p>ログアウト</p>
               <% end %>
             </li>
           <% else %>
             <li>
-              <%= link_to new_user_path do %>
+              <%= link_to root_path do %>
                 <%= image_tag "icon/home.png" %>
+                <P>ホーム</P>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/list of posts.png", class: "abcd" %>
+                <p>マーケット</p>
               <% end %>
             </li>
             <li>
               <%= link_to new_user_path do %>
-                <%= image_tag "icon/list of posts.png" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_user_path do %>
-                <%= image_tag "icon/register.png" %>
+                <%= image_tag "icon/post.png", class: "abcd" %>
+                <p>新規登録</p>
               <% end %>
             </li>
             <li>
               <%= link_to login_path do %>
                 <%= image_tag "icon/login.png" %>
+                <p>ログイン</p>
               <% end %>
             </li>
           <% end %>
