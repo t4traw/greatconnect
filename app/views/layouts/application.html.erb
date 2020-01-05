@@ -9,6 +9,86 @@
   </head>
 
   <body>
+    
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+    
+    <script>
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
+    </script>
+    
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to root_path do %>
+          <span><%= image_tag "icon/logo.png", class: "navbar-brand" %></span>
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/home.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/post.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/list of posts.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/message.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/favorite.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= image_tag "icon/myposts.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%= image_tag "icon/logout.png" %>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_path do %>
+                <%= image_tag "icon/home.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_path do %>
+                <%= image_tag "icon/list of posts.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_path do %>
+                <%= image_tag "icon/register.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to login_path do %>
+                <%= image_tag "icon/login.png" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>

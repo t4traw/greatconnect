@@ -22,7 +22,7 @@ h1, h2 {
 .top-hero-wrapper {
   width: 100vw;
   height: 100vh;
-  background-image: url('home1.jpg');
+  background-image: url('top1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -49,7 +49,7 @@ h1, h2 {
 .users-new-wrapper {
     width: 100vw;
     height: 100vh;
-    background-image: image-url('home1.jpg');
+    background-image: image-url('top1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -57,10 +57,30 @@ h1, h2 {
     background-color: #464646;
     
     .users-new-container {
-        padding-top: 220px;
+        padding-top: 50px;
         
         .form-group {
             margin-bottom: 20px;
         }
     }
+}
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+.navbar-transparent {
+  margin-bottom: 0px;
+
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
+  }
+
+  img {
+    height: 40px;
+  }
 }
