@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'comments/new'
   post '/comments', to: 'comments#create'
   
+  get "items/:id/edit" => "items#edit"
+  post "items/:id/update" => "items#update"
   post "items/:id/destroy" => "items#destroy"
   
   

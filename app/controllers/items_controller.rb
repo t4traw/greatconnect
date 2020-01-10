@@ -17,10 +17,20 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @item = Item.find_by(id: params[:id])
+  end
+  
+  def update
+    @item = Item.find_by(id: params[:id])
+    @item.update(item_params)
+    redirect_to root_path, success: '投稿を編集しました'
+  end
     
   def destroy
-    item = Item.find_by(id: params[:id])
-    item.destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
     redirect_to root_path, success: '投稿を削除しました'
   end
   

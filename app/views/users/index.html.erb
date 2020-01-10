@@ -26,7 +26,12 @@
             <div class="item-menus">
               <%= link_to("削除","/items/#{item.id}/destroy",{method:"post"})  %>
             </div>
-            
+            <div class="item-menus">
+              <%= link_to("編集","/items/#{item.id}/edit",{method:"get"}) %>
+            </div>
+            <div class="item-menus">
+              <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+            </div>
           </div>
         </div>
       </div>
