@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     end  
   end
   
+  def index
+    @user_items = current_user.items
+  end
+  
   private
   def user_params
     params.require(:user).permit(:name, :age, :from, :email, :password, :password_confirmation)

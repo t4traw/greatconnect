@@ -1,0 +1,30 @@
+<div class="item-index-wrapper">
+  <div class="container">
+    <% @like_items.each do |item| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="item-index-single">
+            <h2 class="item-author">
+              <%= item.user.name %>
+            </h2>
+            <%= image_tag item.image.url %>
+            <p class=item-text>
+              [商品名]:<%= item.product %>
+            </p>
+            <p class=item-text>
+              [価格]:<%= item.price %>円
+            </p>
+            <p class=item-text>
+              [説明]:<%= item.description %>
+            </p>
+            <hr>
+            <h3>コメント</h3>
+            <% item.comments.each do |comment| %>
+              <P><%= comment.content %></P>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>  
