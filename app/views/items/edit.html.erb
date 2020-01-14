@@ -25,7 +25,9 @@
             <%= f.text_area :description, class: 'form-control' %>
           </div>
           
-          <%= f.submit '編集する', class: 'btn btn-black btn-block' %>
+          <% if logged_in? %>
+            <%= f.submit '編集する', class: 'btn btn-black btn-block' %>
+          <% end %>
           
         <% end %>  
       </div>

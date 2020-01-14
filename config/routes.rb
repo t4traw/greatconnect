@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users
   resources :items
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
   
   get 'likes/index'
   post '/likes', to: 'likes#create'

@@ -5,6 +5,9 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :image, presence: true
   
+  validates :product, length: {maximum: 40 }
+  validates :description, length: {maximum: 500}
+  
   belongs_to :user
   has_many :likes
   has_many :like_users, through: :likes, source: 'user'

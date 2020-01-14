@@ -5,7 +5,11 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="item-index-single">
             <h2 class="item-author">
-              <%= item.user.name %>    
+              <% if logged_in? %>
+                <%= link_to item.user.name, user_path(id: item.user.id) %>
+              <% else %>
+                <%= item.user.name %>
+              <% end %>
             </h2>
             <%= image_tag item.image.url %>
             <p class=item-text>
@@ -22,17 +26,20 @@
             <% item.comments.each do |comment| %>
               <P><%= comment.content %></P>
             <% end %>
-            
-            <div class="item-menus">
-              <% unless item.like_users.include?(current_user) %>
-                <%= link_to("お気に入りにする",likes_path(item_id: item.id), {method: :post}) %>
-              <% else %>
-                <%= link_to("お気に入りを取り消す",likes_path(item_id: item.id), {method: :delete}) %>
-              <% end %>
-            </div>
-            <div class="item-menus">
-              <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
-            </div>
+            <% if logged_in? %>
+              <div class="item-menus">
+                <% unless item.like_users.include?(current_user) %>
+                  <%= link_to("お気に入りにする",likes_path(item_id: item.id), {method: :post}) %>
+                <% else %>
+                  <%= link_to("お気に入りを取り消す",likes_path(item_id: item.id), {method: :delete}) %>
+                <% end %>
+              </div>
+            <% end %>
+            <% if logged_in? %>
+              <div class="item-menus">
+                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+              </div>
+            <% end %>  
           </div>
         </div>
       </div>

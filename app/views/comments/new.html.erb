@@ -9,8 +9,9 @@
             <%= f.text_area :content, class: 'form-control' %>
             <%= f.hidden_field :item_id,value: params[:item_id] %>
           </div>
-          
-          <%= f.submit 'コメントする', class: 'btn btn-black btn-block' %>
+          <% if logged_in? %>
+            <%= f.submit 'コメントする', class: 'btn btn-black btn-block' %>
+          <% end %>
           
         <% end %>
       </div>
