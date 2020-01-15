@@ -24,8 +24,6 @@ class ItemsController < ApplicationController
   
   def update
     @item = Item.find_by(id: params[:id]) 
-    # test comment
-  
     @item.update(item_params)
     redirect_to root_path, success: '投稿を編集しました'
   end
