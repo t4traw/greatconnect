@@ -65,6 +65,10 @@ h1, h2 {
     }
 }
 
+.user-show-wrapper {
+  margin-top: 200px;
+}
+
 .alert {
   margin-bottom: 0px;
   position: fixed;
@@ -147,4 +151,12 @@ h1, h2 {
       padding-right: 20px;
     }
   }
+}
+
+.room-index-wrapper {
+  padding-top: 140px;
+}
+
+.room-show-wrapper {
+  padding-top: 150px;
 }

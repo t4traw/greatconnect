@@ -5,8 +5,10 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="item-index-single">
             <h2 class="item-author">
+              <span class="user-tooltip" data-toggle="tooltip" data-placement="right" title="ユーザーページへ">
               <% if logged_in? %>
                 <%= link_to item.user.name, user_path(id: item.user.id) %>
+              </span>  
               <% else %>
                 <%= item.user.name %>
               <% end %>
