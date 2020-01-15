@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   end
     
   def destroy
-    @item = Item.find_by(id: params[:id])
+    @item = current_user.item.find(params[:id])
     @item.destroy
     redirect_to root_path, success: '投稿を削除しました'
   end
