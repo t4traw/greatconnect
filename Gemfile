@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'brakeman',  :require => false
 end
 
 group :development do
