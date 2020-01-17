@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all.includes(:like_users)
+    @search = Item.ransack(params[:q])
+    @items = @search.result
   end
   
   def new

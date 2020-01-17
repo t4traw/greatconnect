@@ -1,5 +1,17 @@
 <div class="item-index-wrapper">
   <div class="container">
+    
+    <div class="text-center">
+      <%= search_form_for @search, url: items_path do |f| %>
+        <%= f.label :product_cont, '商品名' %>
+        <%= f.search_field :product_cont %></br>
+        <%= f.label :price, '価格' %>
+          <%= f.number_field :price_gteq %>以上~
+          <%= f.number_field :price_lteq %>以下</br>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
+    
     <% @items.each do |item| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
