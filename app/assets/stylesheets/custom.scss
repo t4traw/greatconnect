@@ -40,6 +40,9 @@ h1, h2 {
   h2 {
     margin-bottom: 60px;
   }
+  h3 {
+    font-family: normal;
+  }
 }
 
 .form-control {
@@ -48,7 +51,7 @@ h1, h2 {
 
 .users-new-wrapper {
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background-image: image-url('top1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -57,10 +60,10 @@ h1, h2 {
     background-color: #464646;
     
     .users-new-container {
-        padding-top: 50px;
+        padding-top: 100px;
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
     }
 }
@@ -84,8 +87,10 @@ h1, h2 {
     }
 
   .navbar-brand {
-    padding: 0px;
+    padding-top: 20px;
     margin-top: 15px;
+    font-size: 40px;
+    color: white;
   }
 
   img {
@@ -107,6 +112,24 @@ h1, h2 {
 
   &:hover {
     color: #565656;
+  }
+}
+
+.sessions-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('top1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  
+  .sessions-new-container {
+    padding-top: 150px;
+  }
+  .form-group {
+    margin-bottom: 25px;
   }
 }
 
