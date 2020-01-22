@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  
-
-  get 'sessions/new'
-
   root 'home#index'
+  
+  get 'sessions/new'
+  
   resources :users
   resources :items
   resources :messages, :only => [:create]

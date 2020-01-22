@@ -6,17 +6,17 @@
         <%= form_for @user do |f| %>
         
           <div class="form-group">
-            <%= f.label :name, '名前', class: 'text-white' %>
+            <%= f.label :name, '名前 ※最大15文字', class: 'text-white' %>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :age, '年齢', class: 'text-white' %>
+            <%= f.label :age, '年齢 ※数字を入力', class: 'text-white' %>
             <%= f.number_field :age, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :from, '都道府県', class: 'text-white' %>
+            <%= f.label :from, '都道府県 ※漢字で入力', class: 'text-white' %>
             <%= f.text_field :from, class: 'form-control' %>
           </div>
           
@@ -26,7 +26,7 @@
           </div>
           
           <div class="form-group">
-            <%= f.label :password, 'パスワード', class: 'text-white' %>
+            <%= f.label :password, 'パスワード ※8文字以上', class: 'text-white' %>
             <%= f.password_field :password, class: 'form-control' %>
           </div>
           

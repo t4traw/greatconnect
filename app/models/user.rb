@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]+\z/ }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z]+\.[a-z]+\z/i }
   validates :name, length: { maximum: 15 }
+  validates :age, length: { maximum: 2 }
+  validates :form, length: { maximum: 4 }
   
   has_secure_password
   
