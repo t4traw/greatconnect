@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
+gem 'rails', '~> 5.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
@@ -63,4 +63,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'bcrypt'
 gem "carrierwave"
+<<<<<<< HEAD
 gem 'ransack'
+=======
+gem 'bootsnap', require: false
+>>>>>>> update-rails-5_1
