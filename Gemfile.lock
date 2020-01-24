@@ -252,12 +252,9 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   puma (~> 3.0)
-<<<<<<< HEAD
   rails (~> 5.0.7, >= 5.0.7.2)
   ransack
-=======
   rails (~> 5.2)
->>>>>>> update-rails-5_1
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
