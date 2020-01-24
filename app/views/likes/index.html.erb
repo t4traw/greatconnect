@@ -5,17 +5,23 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="item-index-single">
             <h2 class="item-author">
-              <%= item.user.name %>
+              <span class="user-tooltip" data-toggle="tooltip" data-placement="right" title="ユーザーページへ">
+              <% if logged_in? %>
+                <%= link_to item.user.name, user_path(id: item.user.id) %>
+              </span>  
+              <% else %>
+                <%= item.user.name %>
+              <% end %>
             </h2>
             <%= image_tag item.image.url %>
             <p class=item-text>
-              [商品名]:<%= item.product %>
+              [商品名] <%= item.product %>
             </p>
             <p class=item-text>
-              [価格]:<%= item.price %>円
+              [価格] <%= item.price %>円
             </p>
             <p class=item-text>
-              [説明]:<%= item.description %>
+              [説明] <%= item.description %>
             </p>
             <hr>
             <h3>コメント</h3>

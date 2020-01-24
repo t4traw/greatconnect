@@ -6,22 +6,22 @@
         <%= form_for @item do |f| %>
         
           <div class="form-group">
-            <%= f.label :image %>
+            <%= f.label :image, '画像' %>
             <%= f.file_field :image %>
           </div>
           
           <div class="form-group">
-            <%= f.label :product %>
+            <%= f.label :product, '商品名 ※最大30文字' %>
             <%= f.text_field :product, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :price %>
-            <%= f.text_field :price, class: 'form-control' %>
+            <%= f.label :price, '価格 ※数字を入力' %>
+            <%= f.number_field :price, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :description %>
+            <%= f.label :description, '説明 ※最大500文字' %>
             <%= f.text_area :description, class: 'form-control' %>
           </div>
           

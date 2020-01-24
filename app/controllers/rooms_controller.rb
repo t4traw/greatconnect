@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create
     @entry1 = Entry.create(:room_id => @room.id, :user_id => current_user.id)
-    @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id))
+    @entry2 = Entry.create(entry_params)
     redirect_to "/rooms/#{@room.id}"
   end
   
@@ -27,6 +27,11 @@ class RoomsController < ApplicationController
     end
 
     @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
+  end
+  
+  private
+  def entry_params
+    params.require(:entry).premit(:user_id, :room_id).merge(:room_id => @room.id)
   end
 end
 
