@@ -66,4 +66,4 @@ gem 'bcrypt'
 gem "carrierwave"
 gem 'ransack'
 gem 'bootsnap', require: false
-
+gem 'rails-i18n'

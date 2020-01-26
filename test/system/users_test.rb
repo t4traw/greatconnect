@@ -24,5 +24,16 @@ class UsersTest < ApplicationSystemTestCase
     fill_in 'user[password_confirmation]', with: user[:password_confirmation]
     click_button '登録'
   end
+  
+  test "visiting the new" do
+    visit new_user_url
+    assert_selector "h1", text: "新規登録"
+  end
+  
+  test "create user" do
+    register_user(@user)
+  end
+  
+  
 
 end

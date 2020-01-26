@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      item: "アイテム"
+    attributes:
+      user:
+        name: "名前"
+        age: "年齢"
+        from: "都道府県"
+        email: "メールアドレス"
+        password: "パスワード"
+      item:
+        image: "画像"
+        product: "商品名"
+        price: "価格"
+        description: "商品の説明"
+
+        
+        

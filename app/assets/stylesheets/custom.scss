@@ -19,6 +19,21 @@ h1, h2 {
   }
 }
 
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+.alerts {
+    olor:#262626; 
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px; font-weight:850;
+  }
+
 .top-hero-wrapper {
   width: 100vw;
   height: 100vh;
@@ -51,7 +66,7 @@ h1, h2 {
 
 .users-new-wrapper {
     width: 100vw;
-    height: 110vh;
+    height: 130vh;
     background-image: image-url('top1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -72,12 +87,7 @@ h1, h2 {
   margin-top: 200px;
 }
 
-.alert {
-  margin-bottom: 0px;
-  position: fixed;
-  width: 100%;
-  z-index: 10000;
-}
+
 
 .navbar-transparent {
   margin-bottom: 0px;
@@ -183,3 +193,4 @@ h1, h2 {
 .room-show-wrapper {
   padding-top: 150px;
 }
+
