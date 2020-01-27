@@ -32,8 +32,14 @@ class UsersTest < ApplicationSystemTestCase
   
   test "create user" do
     register_user(@user)
+    assert_text "登録が完了しました"
   end
   
+  test "register if duplicate user name||email" do
+    register_user(@user)
+    register_user(@user)
+    assert_text "メールアドレスはすでに存在します"
+  end
   
 
 end
