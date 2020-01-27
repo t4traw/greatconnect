@@ -1,15 +1,22 @@
 class User < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :from, :email,presence: true
+  
+  validates :name, length: { maximum: 15 }
+  
   validates :age, numericality: true
-  validates :from, presence: true
-  validates :email, presence: true
+  validates :age, length: { maximum: 2 }
+  
+  validates :from, length: { maximum: 4 }
+  
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z]+\.[a-z]+\z/i }
+  validates :email, uniqueness: true
   
   validates :password, length: {minmum: 8, maximum: 32}
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]+\z/ }
-  validates :email, format: { with: /\A[\w+\-.]+@[a-z]+\.[a-z]+\z/i }
-  validates :name, length: { maximum: 15 }
-  validates :age, length: { maximum: 2 }
-  validates :form, length: { maximum: 4 }
+  
+  
+  
+  
   
   has_secure_password
   

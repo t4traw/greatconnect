@@ -5,6 +5,8 @@
         <h1 class="text-center">投稿作成</h1>
         <%= form_for @item do |f| %>
         
+        <%= render 'layouts/error_messages', model: f.object %>
+        
           <div class="form-group">
             <%= f.label :image, '画像' %>
             <%= f.file_field :image %>
