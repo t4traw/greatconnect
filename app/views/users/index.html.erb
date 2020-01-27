@@ -1,39 +1,46 @@
 <div class="item-index-wrapper">
   <div class="container">
-    <% @user_items.each do |item| %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="item-index-single">
-            <h2 class="item-author">
-              <%= item.user.name %>
-            </h2>
-            <%= image_tag item.image.url %>
-            <p class=item-text>
-              [商品名] <%= item.product %>
-            </p>
-            <p class=item-text>
-              [価格] <%= item.price %>円
-            </p>
-            <p class=item-text>
-              [説明] <%= item.description %>
-            </p>
-            <hr>
-            <h3>コメント</h3>
-            <% item.comments.each do |comment| %>
-              <P><%= comment.content %></P>
-            <% end %>
-            
-            <div class="item-menus">
-              <%= link_to("削除","/items/#{item.id}/destroy",{method:"post"})  %>
-            </div>
-            <div class="item-menus">
-              <%= link_to("編集","/items/#{item.id}/edit",{method:"get"}) %>
-            </div>
-            <div class="item-menus">
-              <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+    <% if @user_items.present? %>
+      <% @user_items.each do |item| %>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="item-index-single">
+              <h2 class="item-author">
+                <%= item.user.name %>
+              </h2>
+              <%= image_tag item.image.url %>
+              <p class=item-text>
+                [商品名] <%= item.product %>
+              </p>
+              <p class=item-text>
+                [価格] <%= item.price %>円
+              </p>
+              <p class=item-text>
+                [説明] <%= item.description %>
+              </p>
+              <hr>
+              <h3>コメント</h3>
+              <% item.comments.each do |comment| %>
+                <P><%= comment.content %></P>
+              <% end %>
+              
+              <div class="item-menus">
+                <%= link_to("削除","/items/#{item.id}/destroy",{method:"post"})  %>
+              </div>
+              <div class="item-menus">
+                <%= link_to("編集","/items/#{item.id}/edit",{method:"get"}) %>
+              </div>
+              <div class="item-menus">
+                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+              </div>
             </div>
           </div>
         </div>
+      <% end %>
+    <% else %>
+      <div class="user-like-index-container text-center">
+        <h1>現在あなたの投稿はありません</h1>
+        <%= link_to '投稿を作成する', new_item_path, class: 'btn btn-primary btn-primary btn-lg' %>
       </div>
     <% end %>
   </div>
