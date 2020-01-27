@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class LoginsTest < ApplicationSystemTestCase
   setup do
-    @user = {
+    @post = {
       name: "test",
       email: "test20@gmail.com",
       password: "testtest20"
@@ -13,8 +13,8 @@ class LoginsTest < ApplicationSystemTestCase
     visit root_url
     click_on 'ログインする'
     assert_selector "h1", text: "ログイン"
-    fill_in 'user[email]', with: user[:email]
-    fill_in 'user[password]', with: user[:password]
+    fill_in 'post[email]', with: post[:email]
+    fill_in 'post[password]', with: post[:password]
     click_button 'ログイン'
   end
   
@@ -24,7 +24,7 @@ class LoginsTest < ApplicationSystemTestCase
   end
   
   test "login user" do
-    login_user(@user)
+    login_user(@post)
     visit root_url
     assert_selector "h3", test:"現在ログインユーザー：test"
   end

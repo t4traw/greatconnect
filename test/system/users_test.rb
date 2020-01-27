@@ -5,7 +5,7 @@ class UsersTest < ApplicationSystemTestCase
     @user = {
         name: "テストユーザー",
         age: 20,
-        form: "東京都",
+        from: "東京都",
         email: "test20@gmail.com",
         password: "testtest20",
         password_confirmation: "testtest20"
