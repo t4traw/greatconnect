@@ -1,22 +1,6 @@
 require "application_system_test_case"
 
 class LoginsTest < ApplicationSystemTestCase
-  setup do
-    @post = {
-      name: "test",
-      email: "test20@gmail.com",
-      password: "testtest20"
-    }
-  end
-  
-  def login_user(user)
-    visit root_url
-    click_on 'ログインする'
-    assert_selector "h1", text: "ログイン"
-    fill_in 'post[email]', with: post[:email]
-    fill_in 'post[password]', with: post[:password]
-    click_button 'ログイン'
-  end
   
   test "visiting the login" do
     visit login_url
@@ -24,9 +8,11 @@ class LoginsTest < ApplicationSystemTestCase
   end
   
   test "login user" do
-    login_user(@post)
+    login_user(@user)
     visit root_url
-    assert_selector "h3", test:"現在ログインユーザー：test"
+    page.save_screenshot "tmp/screenshots/#{Time.now.strftime('%Y%m%d%H%M%S')}.png"
+    assert_selector "h3", text: "現在ログインユーザー：テストユーザー"
+
   end
-  
+
 end
