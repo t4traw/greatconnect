@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'bcrypt'
 gem "carrierwave"
+gem 'fog-aws'
 gem 'ransack'
 gem 'bootsnap', require: false
 gem 'rails-i18n'
