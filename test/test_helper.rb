@@ -11,7 +11,7 @@ class ActiveSupport::TestCase
         age: 20,
         from: "東京都",
         email: "test20@gmail.com",
-        password: "testtest20",
+        password: "testtest20"
     }
   end
   
