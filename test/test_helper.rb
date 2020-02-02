@@ -37,6 +37,26 @@ class ActiveSupport::TestCase
     fill_in 'session[password]', with: user[:password]
     click_button 'ログイン'
   end
+  
+  setup do
+  @item = {
+     product: "テスト",
+     price: 300,
+     description: "テストです"
+  }
+ end
+  
+ def item_test(item)
+   login_user(@user)
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: item[:product]
+   fill_in 'item[price]', with: item[:price]
+   fill_in 'item[description]', with: item[:description]
+   click_button '投稿'
+ end
 
   # Add more helper methods to be used by all tests here...
 end

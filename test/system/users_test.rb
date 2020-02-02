@@ -17,5 +17,23 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "メールアドレスはすでに存在します"
   end
   
+  test "visiting the index" do
+    login_user(@user)
+    visit users_url
+    assert_selector "h1", text: "現在あなたの投稿はありません"
+  end
+  
+  test "visit the index with items" do
+    item_test(@item)
+    visit users_url
+    assert_selector "h2", text: "テストユーザー"
+  end
+  
+  test "go to item new" do
+    login_user(@user)
+    visit users_url
+    assert_selector "h1", text: "現在あなたの投稿はありません"
+    click_on '投稿を作成する'
+  end
 
 end
