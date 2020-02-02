@@ -13,8 +13,8 @@ It is an app that connects people who sell local specialties and those who purch
 ## Requirements
 
 
-- rails 5.2.4.1
-- mysqld2 0.5.3
+- rails 5.2.4
+- mysql2 0.5.3
 
 ## Installation
 
