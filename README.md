@@ -14,7 +14,7 @@
 - HTML, Sass
 - jQuery
 - AWS 
-  -S3
+  - S3
 - GitHub
 
 # クラウドアーキテクチャ
