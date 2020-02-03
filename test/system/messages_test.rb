@@ -68,5 +68,18 @@ class MessagesTest < ApplicationSystemTestCase
     assert_selector "strong", text: "テストです"
   end
   
+  test "visiting the rooms/index" do
+    login_user(@user)
+    visit rooms_url
+    assert_selector "h1", text: "DM一覧"
+  end
+  
+  test "move from DM list to DM" do
+    message_user(@user2)
+    click_button "メッセージを送る"
+    visit rooms_url
+    click_on 'テストユーザーへメッセージを送る'
+    assert_selector "h1", text: "DM（ダイレクトメッセージ）"
+  end
   
 end

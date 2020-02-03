@@ -57,6 +57,12 @@ class ActiveSupport::TestCase
    fill_in 'item[description]', with: item[:description]
    click_button '投稿'
  end
+ 
+ def like_item(item)
+   item_test(@item)
+   visit items_url
+   click_on "お気に入りにする"
+ end
 
   # Add more helper methods to be used by all tests here...
 end

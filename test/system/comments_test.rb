@@ -37,5 +37,25 @@ class CommentsTest < ApplicationSystemTestCase
     assert_selector "p", text: "コメントのテストです"
   end
   
+  test "comment from user.index" do
+    item_test(@item)
+    visit users_url
+    click_on 'コメントする'
+    assert_selector "h1", text: "コメントの投稿"
+    fill_in "comment[content]", with: @comment[:content]
+    click_button 'コメントする'
+    assert_text 'コメントしました'
+  end
+  
+  test "comment from like.index" do
+    like_item(@item)
+    visit likes_index_url
+    click_on 'コメントする'
+    assert_selector "h1", text: "コメントの投稿"
+    fill_in "comment[content]", with: @comment[:content]
+    click_button 'コメントする'
+    assert_text 'コメントしました'
+  end
+  
   
 end
