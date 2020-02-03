@@ -57,5 +57,4 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text 'コメントしました'
   end
   
-  
 end

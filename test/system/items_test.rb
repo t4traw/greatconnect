@@ -8,7 +8,7 @@ class ItemsTest < ApplicationSystemTestCase
    price: 500,
    description: "テスト編集です"
  }
-end
+ end
  
  test "visiting the new" do
    visit new_item_url
@@ -45,4 +45,5 @@ end
    click_on "削除"
    assert_text '投稿を削除しました'
  end
+ 
 end
