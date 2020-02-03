@@ -10,6 +10,11 @@ class MessagesTest < ApplicationSystemTestCase
       email: "test21@gmail.com",
       password: "testtest21"
     }
+    
+    @message = {
+      content: "テストです"
+    }
+    
   end
   
   def register_user2(user2)
@@ -35,13 +40,33 @@ class MessagesTest < ApplicationSystemTestCase
     click_button 'ログイン'
   end
   
-  test "visiting the show" do
-    login_user2(@user2)
+  def message_user(user2)
     item_test(@item)
+    click_on 'ログアウト'
+    login_user2(@user2)
     visit items_url
-    click_on "テストユーザー"
-    assert_selector "h1", text: "ユーザー詳細"
+    click_on "テストユーザー"  
+  end
+  
+  test "visiting the show" do
+    message_user(@user2)
+    assert_selector "h2", text: "テストユーザーさんのページ"
+  end
+  
+  test "create room" do
+    message_user(@user2)
+    click_button "メッセージを送る"
+    assert_selector "h1", text: "DM（ダイレクトメッセージ）"
   end
 
+  test "create message" do
+    message_user(@user2)
+    click_button "メッセージを送る"
+    assert_selector "h4", text: "メッセージはまだありません"
+    fill_in 'message[content]', with: @message[:content]
+    click_button '送信する'
+    assert_selector "strong", text: "テストです"
+  end
+  
   
 end
