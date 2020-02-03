@@ -9,10 +9,15 @@ class LoginsTest < ApplicationSystemTestCase
   
   test "login user" do
     login_user(@user)
+    assert_text 'ログインしました'
     visit root_url
-    page.save_screenshot "tmp/screenshots/#{Time.now.strftime('%Y%m%d%H%M%S')}.png"
     assert_selector "h3", text: "現在ログインユーザー：テストユーザー"
-
+  end
+  
+  test "ligout user" do
+    login_user(@user)
+    click_on 'ログアウト'
+    assert_text 'ログアウトしました'
   end
 
 end
