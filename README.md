@@ -1,33 +1,38 @@
-# Greatconnect(グレートコネクト)
+# Greatconnect
 
-It is an app that connects people who sell local specialties and those who purchase them.
+地方の名産物を販売する人と購入したい人を繋げるサービスです。就職活動用のポートフォリオとして作成致しました。
 
-## DEMO
-
-## Features
+# リンク
 
 
-- Meet local specialties you may not know
-- You can ask the seller directly about the product you care about
 
-## Requirements
+# 使用技術
 
+- Ruby 2.0.1
+- Ruby on Rails 5.2.4
+- MySQL 0.5.3
+- HTML, Sass
+- jQuery
+- AWS 
+  -S3
+- GitHub
 
-- rails 5.2.4
-- mysql2 0.5.3
-
-## Installation
-
-
-## Usage
-
-
-## Note
+# クラウドアーキテクチャ
 
 
-## Author
 
+# 機能一覧、使用したgemなど
 
-## License
+- 投稿機能
+- コメント機能
+- ユーザー登録機能、ログイン機能
+- いいね機能
+- 検索機能(Ransack)
+- DM機能
+
+# テスト
+
+- minitest
+  - 結合テスト
 
 
