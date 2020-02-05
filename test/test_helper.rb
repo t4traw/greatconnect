@@ -13,6 +13,7 @@ class ActiveSupport::TestCase
         email: "test20@gmail.com",
         password: "testtest20"
     }
+    
   end
   
   def register_user(user)
