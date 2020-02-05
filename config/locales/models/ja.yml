@@ -10,6 +10,7 @@ ja:
         from: "都道府県"
         email: "メールアドレス"
         password: "パスワード"
+        password_confirmation: "パスワード再確認"
       item:
         image: "画像"
         product: "商品名"

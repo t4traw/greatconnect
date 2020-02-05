@@ -20,6 +20,24 @@ class ItemsTest < ApplicationSystemTestCase
    assert_text "商品を投稿しました"
  end
  
+ test "if the input is blank" do
+   login_user(@user)
+   click_on '投稿する'
+   click_button '投稿'
+   assert_text "画像を入力してください"
+   assert_text "商品の説明を入力してください"
+   assert_text "価格は数値で入力してください"
+   assert_text "商品の説明を入力してください"
+ end
+ 
+ test "wrong price" do
+   login_user(@user)
+   click_on '投稿する'
+   fill_in 'item[price]', with: 100000000
+   click_button '投稿'
+   assert_text "価格は8文字以内で入力してください"
+ end
+ 
  test "visiting the index" do
    item_test(@item)
    visit items_url
