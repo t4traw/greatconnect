@@ -68,3 +68,4 @@ gem 'fog-aws'
 gem 'ransack'
 gem 'bootsnap', require: false
 gem 'rails-i18n'
+gem 'kaminari', '~> 0.17.0'

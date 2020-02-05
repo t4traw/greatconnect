@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   def index
     @search = Item.search(params[:q])
-    @items = @search.result
+    @items = @search.result.page(params[:page]).per(2)
+    #@items = Item.page(params[:page]).per(2)
+    
   end
   
   def new
