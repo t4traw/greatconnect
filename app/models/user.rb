@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :age, length: { maximum: 2 }
   
   validates :from, length: { maximum: 4 }
-  validates :from, format: { with: /\A[一-龥]+\z/ }
+  #validates :from, format: { with: /\A[一-龥]+\z/ }
   
   validates :email, format: { with: /\A[\w+\-.]+@[a-z]+\.[a-z]+\z/i }
   validates :email, uniqueness: true
