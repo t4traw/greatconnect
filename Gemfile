@@ -68,9 +68,6 @@ gem 'fog-aws'
 gem 'ransack'
 gem 'bootsnap', require: false
 gem 'rails-i18n'
-<<<<<<< HEAD
 gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
-=======
 gem 'dotenv-rails', groups: [:development, :test]
->>>>>>> dae8343b2c7a534b8d2236c98d6bdef41e015df5
