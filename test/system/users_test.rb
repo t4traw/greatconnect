@@ -29,13 +29,13 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "メールアドレスはすでに存在します"
   end
   
-  test "when the input of prefecture is Hiragana" do
-    visit root_url
-    click_on '登録する'
-    fill_in 'user[from]', with: "いわて"
-    click_button '登録'
-    assert_text "都道府県は不正な値です"
-  end
+  # test "when the input of prefecture is Hiragana" do
+  #   visit root_url
+  #   click_on '登録する'
+  #   fill_in 'user[from]', with: "いわて"
+  #   click_button '登録'
+  #   assert_text "都道府県は不正な値です"
+  # end
   
   # test "incorrect prefecture input" do
   #   visit root_url
