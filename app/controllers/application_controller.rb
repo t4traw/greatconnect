@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  
   add_flash_types :success, :info, :warning, :danger
   
   helper_method :current_user, :logged_in?
@@ -11,4 +12,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
+  
 end

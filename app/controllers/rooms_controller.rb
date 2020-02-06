@@ -21,11 +21,11 @@ class RoomsController < ApplicationController
     @user = current_user
     @currentEntries = current_user.entries
     myRoomIds = []
-
+    
     @currentEntries.each do | entry |
       myRoomIds << entry.room.id
     end
-
+    
     @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
   end
   
@@ -33,5 +33,6 @@ class RoomsController < ApplicationController
   def entry_params
     params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id)
   end
+  
 end
 

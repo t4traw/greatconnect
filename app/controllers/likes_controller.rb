@@ -7,7 +7,6 @@ class LikesController < ApplicationController
     like = Like.new
     like.user_id = current_user.id
     like.item_id = params[:item_id]
-      
     if like.save
       redirect_to items_path, success: 'お気に入りに登録しました'
     else
@@ -25,4 +24,5 @@ class LikesController < ApplicationController
       redirect_to items_path, success: 'お気に入り解除に失敗しました'
     end
   end
+  
 end
