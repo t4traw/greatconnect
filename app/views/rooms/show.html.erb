@@ -11,6 +11,7 @@
           <% end %>
           
           <hr>
+          
           <% if @messages.present? %>
             <% @messages.each do |m| %>
               <small> <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %></a></strong></small>
