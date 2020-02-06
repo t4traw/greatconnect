@@ -37,13 +37,13 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "都道府県は不正な値です"
   end
   
-  test "incorrect prefecture input" do
-    visit root_url
-    click_on '登録する'
-    fill_in 'user[from]', with: "鹿児島県県"
-    click_button '登録'
-    assert_text "都道府県は4文字以内で入力してください"
-  end
+  # test "incorrect prefecture input" do
+  #   visit root_url
+  #   click_on '登録する'
+  #   fill_in 'user[from]', with: "鹿児島県県"
+  #   click_button '登録'
+  #   assert_text "都道府県は4文字以内で入力してください"
+  # end
   
   test "incorrect name input" do
     visit root_url

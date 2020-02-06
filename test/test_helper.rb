@@ -9,7 +9,7 @@ class ActiveSupport::TestCase
     @user = {
         name: "テストユーザー",
         age: 20,
-        from: "東京都",
+        from: "40",
         email: "test20@gmail.com",
         password: "testtest20"
     }
