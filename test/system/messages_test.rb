@@ -6,7 +6,7 @@ class MessagesTest < ApplicationSystemTestCase
     @user2 = {
       name: "テストユーザ2",
       age: 21,
-      from: "大阪府",
+      #from: "大阪府",
       email: "test21@gmail.com",
       password: "testtest21"
     }
@@ -23,7 +23,7 @@ class MessagesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "新規登録"
     fill_in 'user[name]', with: user2[:name]
     fill_in 'user[age]', with: user2[:age]
-    fill_in 'user[from]', with: user2[:from]
+    select '大阪府', from: '都道府県'
     fill_in 'user[email]', with: user2[:email]
     fill_in 'user[password]', with: user2[:password]
     fill_in 'user[password_confirmation]', with: user2[:password]

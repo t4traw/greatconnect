@@ -64,4 +64,7 @@ class ItemsTest < ApplicationSystemTestCase
    assert_text '投稿を削除しました'
  end
  
+ test "Can pagination be possible" do
+ end
+ 
 end
