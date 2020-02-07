@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
+  resources :testsessions, only: :create
   
   get 'likes/index'
   post '/likes', to: 'likes#create'
