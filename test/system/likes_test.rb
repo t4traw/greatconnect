@@ -39,5 +39,15 @@ class LikesTest < ApplicationSystemTestCase
     assert_text 'お気に入りを解除しました'
   end
   
+  test "can you go to user/show" do
+    item_test(@item)
+    click_on 'ログアウト'
+    login_user2(@user2)
+    visit items_url
+    click_on 'お気に入りにする'
+    visit likes_index_url
+    click_on "DMを送る"
+    assert_selector "h2", text: "テストユーザーさんのページ"
+  end
   
 end
