@@ -55,6 +55,16 @@
             <% end %>
             <% if logged_in? %>
               <div class="item-menus">
+                <%= link_to 'DMを送る', user_path(id: item.user.id) %>
+              </div>
+            <% end %>
+            <% if logged_in? %>
+              <div class="item-menus">
+                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+              </div>
+            <% end %>
+            <% if logged_in? %>
+              <div class="item-menus">
                 <% unless item.like_users.include?(current_user) %>
                   <%= link_to("お気に入りにする",likes_path(item_id: item.id), {method: :post}) %>
                 <% else %>
@@ -62,11 +72,6 @@
                 <% end %>
               </div>
             <% end %>
-            <% if logged_in? %>
-              <div class="item-menus">
-                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
-              </div>
-            <% end %>  
           </div>
         </div>
       </div>
