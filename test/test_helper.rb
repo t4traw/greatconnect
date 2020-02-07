@@ -60,6 +60,7 @@ class ActiveSupport::TestCase
    click_button '投稿'
  end
  
+ 
  def like_item(item)
    item_test(@item)
    visit items_url
