@@ -29,7 +29,13 @@
               <% item.comments.each do |comment| %>
                 <P><%= comment.content %></P>
               <% end %>
-                
+              
+              <div class="item-menus">
+                <%= link_to 'DMを送る', user_path(id: item.user.id) %>
+              </div> 
+              <div class="item-menus">
+                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
+              </div> 
               <div class="item-menus">
                 <% unless item.like_users.include?(current_user) %>
                   <%= link_to("お気に入りにする",likes_path(item_id: item.id), {method: :post}) %>
@@ -37,9 +43,7 @@
                   <%= link_to("お気に入りを取り消す",likes_path(item_id: item.id), {method: :delete}) %>
                 <% end %>
               </div>
-              <div class="item-menus">
-                <%= link_to("コメントする",comments_new_path(item_id: item.id), {method: :get})  %>
-              </div>
+              
             </div>
           </div>
         </div>

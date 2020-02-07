@@ -6,7 +6,7 @@
 
 - Ruby 2.0.1
 - Ruby on Rails 5.2.4
-- MySQL 0.5.3
+- MySQL2 0.5.3
 - HTML, Sass
 - jQuery
 - AWS 
@@ -20,6 +20,7 @@
 - ユーザー登録機能、ログイン機能
 - いいね機能
 - 検索機能(Ransack)
+- ページネーション機能(Kaminari)
 - DM機能
 
 # テスト

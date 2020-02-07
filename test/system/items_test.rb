@@ -87,4 +87,13 @@ class ItemsTest < ApplicationSystemTestCase
    assert_selector "h2", text: "テストユーザー"
  end
  
+ test "can you go to user/show" do
+   item_test(@item)
+   click_on 'ログアウト'
+   login_user2(@user2)
+   visit items_url
+   click_on "DMを送る"
+   assert_selector "h2", text: "テストユーザーさんのページ"
+ end
+ 
 end
