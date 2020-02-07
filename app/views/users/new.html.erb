@@ -19,7 +19,7 @@
           
           <div class="form-group">
             <%= f.label :from, '都道府県:', class: 'text-white' %>
-            <%= f.collection_select :from, Prefecture.all, :id, :name %>
+            <%= f.collection_select :from, Prefecture.all, :name, :name %>
           </div>
           
           <div class="form-group">

@@ -17,7 +17,7 @@ class UsersTest < ApplicationSystemTestCase
     click_on '登録する'
     click_button '登録'
     assert_text "名前を入力してください"
-    assert_text "都道府県を入力してください"
+    #assert_text "都道府県を入力してください"
     assert_text "メールアドレスを入力してください"
     assert_text "年齢は数値で入力してください"
     assert_text "パスワードは不正な値です"

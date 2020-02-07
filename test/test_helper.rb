@@ -9,7 +9,7 @@ class ActiveSupport::TestCase
     @user = {
         name: "テストユーザー",
         age: 20,
-        from: "40",
+        #from: "東京都",
         email: "test20@gmail.com",
         password: "testtest20"
     }
@@ -22,7 +22,8 @@ class ActiveSupport::TestCase
     assert_selector "h1", text: "新規登録"
     fill_in 'user[name]', with: user[:name]
     fill_in 'user[age]', with: user[:age]
-    fill_in 'user[from]', with: user[:from]
+    #fill_in 'user[from]', with: user[:from]
+    select '東京都', from: '都道府県'
     fill_in 'user[email]', with: user[:email]
     fill_in 'user[password]', with: user[:password]
     fill_in 'user[password_confirmation]', with: user[:password]
