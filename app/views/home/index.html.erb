@@ -17,6 +17,9 @@
         <div class="col-md-3">
           <%= link_to 'ログインする', login_path,class: 'btn btn-block btn-white' %>
         </div>
+        <div class="test-login col-md-offset-4 col-md-4">
+          <%= link_to 'ゲストログイン', testsessions_path, method: :post, class:"btn btn-lg btn-white center-block" %>
+        </div> 
       <% end %>
     </div>
   </div>
