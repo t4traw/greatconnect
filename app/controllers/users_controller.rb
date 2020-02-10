@@ -13,6 +13,27 @@ class UsersController < ApplicationController
     end  
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if current_user == @user
+      if @user.update(user_params)
+        redirect_to root_path, success: 'ユーザー情報を編集しました'
+      else
+        flsh.now[:danger] = 'ユーザー情報の編集に失敗しました'
+        render :edit
+      end
+    else
+      redirect_to root_url
+    end
+  end
+
+  
+
+  
   def index
     @user_items = current_user.items
   end
