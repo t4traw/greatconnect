@@ -62,7 +62,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to users_path do %>
+              <%= link_to edit_user_path(current_user) do %>
                 <%= image_tag "icon/edit.png", class: "icon2"%>
                 <p>ユーザー<br>情報変更</p>
               <% end %>
