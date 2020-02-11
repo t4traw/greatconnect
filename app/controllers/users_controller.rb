@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         redirect_to root_path, success: 'ユーザー情報を編集しました'
       else
-        flsh.now[:danger] = 'ユーザー情報の編集に失敗しました'
+        flash.now[:danger] = 'ユーザー情報の編集に失敗しました'
         render :edit
       end
     else

@@ -37,10 +37,12 @@
             <%= f.password_field :password_confirmation, class: 'form-control' %>
           </div>
           
-          <% if User.find_by(email:"test@example.com") %>
-            <h1 class="text-white">テストログインユーザーは情報を変更することはできません。</h1>
+          <% if current_user != User.find_by(email:"test@example.com")%>
+            <% if current_user.id == @user.id %>
+              <%= f.submit "変更する", class: 'btn-block btn-white' %>
+            <% end %>
           <% else %>
-            <%= f.submit "変更する", class: 'btn-block btn-white' %>
+            <h1 class="text-white">テストログインユーザーは情報を変更することはできません。</h1>
           <% end %>
         <% end %>
       </div>
