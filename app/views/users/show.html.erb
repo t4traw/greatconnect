@@ -6,14 +6,15 @@
         <h2 class="text-center"><%= @user.name %>さんのページ</h2>
         <div class="text-center">        
           <% if @user.id == current_user.id %>
+            <%= link_to("ユーザー情報の編集","/users/#{@user.id}/edit",{method:"get"}) %>
+          <% else %>
+            <% if @isRoom == true %>
+              <p><a class="btn btn-primary" href="/rooms/<%= @roomId %>" role="button">メッセージ画面へ</a>
             <% else %>
-              <% if @isRoom == true %>
-                <p><a class="btn btn-primary" href="/rooms/<%= @roomId %>" role="button">メッセージ画面へ</a>
-              <% else %>
-                <%= form_for @room do |f| %>
-                  <%= fields_for @entry do |e| %>
-                    <%= e.hidden_field :user_id, :value=> @user.id %>
-                  <% end %>
+              <%= form_for @room do |f| %>
+                <%= fields_for @entry do |e| %>
+                  <%= e.hidden_field :user_id, :value=> @user.id %>
+                <% end %>
                 <%= f.submit "メッセージを送る", class: "btn btn-primary btn-primary" %>
               <% end %>
             <% end %>
