@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     else
       flash[:alert] = "メッセージの送信に失敗しました"
     end
-    redirect_to "/rooms/#{@message.room_id}"
+      redirect_to room_path(@message.room_id)
   end
   
   private
