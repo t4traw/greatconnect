@@ -1,9 +1,9 @@
 class RoomsController < ApplicationController
   def create
     @room = Room.create
-    @entry1 = @room.entries.create(user_id: current_id)
+    @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
     @entry2 = Entry.create(entry_params)
-    redirect_to room_path(@message.room_id)
+    redirect_to "/rooms/#{@room.id}"
   end
   
   def show
