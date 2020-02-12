@@ -8,7 +8,7 @@
 - Ruby 2.0.1
 - Ruby on Rails 5.2.4
 - MySQL2 0.5.3
-- HTML
+- HTML, SCSS
 - jQuery
 - AWS 
   - S3
