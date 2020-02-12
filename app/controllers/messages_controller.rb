@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def create
-    if Entry.where(:user_id => current_user.id, :room_id => message_params[:room_id]).present?
+    if current_user.entries.where(room_id: @room.id).present?
       @message = Message.create(message_params)
     else
       flash[:alert] = "メッセージの送信に失敗しました"
