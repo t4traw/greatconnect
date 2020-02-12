@@ -1,13 +1,18 @@
 # Greatconnect
 
 地方の名産物を販売する人と購入したい人を繋げるサービスです。就職活動用のポートフォリオとして作成致しました。
+![README用](https://user-images.githubusercontent.com/57837112/74327775-15a6a300-4dd0-11ea-9c3c-f53c4caef7c8.jpg)
+
+# リンク
+
+ホームの、ゲストログインボタンから、ゲストユーザーとして機能を体験できます。
 
 # 使用技術
 
 - Ruby 2.0.1
 - Ruby on Rails 5.2.4
 - MySQL2 0.5.3
-- HTML, Sass
+- HTML, SCSS
 - jQuery
 - AWS 
   - S3
