@@ -1,14 +1,14 @@
 class RoomsController < ApplicationController
   def create
     @room = Room.create
-    @entry1 = Entry.create(:room_id => @room.id, :user_id => current_user.id)
+    @entry1 = @room.entries.create(user_id: current_id)
     @entry2 = Entry.create(entry_params)
-    redirect_to "/rooms/#{@room.id}"
+    redirect_to room_path(@message.room_id)
   end
   
   def show
     @room = Room.find(params[:id])
-    if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
+    if current_user.entries.where(room_id: @room.id).present?
       @messages = @room.messages
       @message = Message.new
       @entries = @room.entries
