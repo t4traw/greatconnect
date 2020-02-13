@@ -41,8 +41,9 @@
               <%= link_to("お気に入りを取り消す",likes_path(item_id: @item.id), {method: :delete}) %>
             <% end %>
           </div>
-        </div>      
+        </div>
+        <%= link_to '<= 一覧に戻る', items_path %>
       </div>          
-    </div>              
+    </div>
   </div>
 </div>
