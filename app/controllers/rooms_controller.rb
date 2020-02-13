@@ -1,9 +1,9 @@
 class RoomsController < ApplicationController
   def create
     @room = Room.create
-    @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
-    @entry2 = Entry.create(entry_params)
-    redirect_to "/rooms/#{@room.id}"
+    @room.entries.create(user_id: current_user.id)
+    @room.entries.create(entry_params)
+    redirect_to room_path(@room)
   end
   
   def show
@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     myRoomIds = []
     
     @currentEntries.each do | entry |
-      myRoomIds << entry.room.id
+      myRoomIds << entry.room.id　#myRoomIdsにentry.room.idを渡す
     end
     
     @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
@@ -31,7 +31,7 @@ class RoomsController < ApplicationController
   
   private
   def entry_params
-    params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id)
+    params.require(:entry).permit(:user_id, :room_id).merge(room_id: @room.id)
   end
   
 end
