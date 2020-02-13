@@ -64,6 +64,7 @@ class ActiveSupport::TestCase
  def like_item(item)
    item_test(@item)
    visit items_url
+   click_on '詳細をみる'
    click_on "お気に入りにする"
  end
  

@@ -44,6 +44,7 @@ class LikesTest < ApplicationSystemTestCase
     click_on 'ログアウト'
     login_user2(@user2)
     visit items_url
+    click_on '詳細をみる'
     click_on 'お気に入りにする'
     visit likes_index_url
     click_on "DMを送る"
