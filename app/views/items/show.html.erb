@@ -1,0 +1,49 @@
+<div class="item-index-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="item-index-single">
+          <h2 class="item-author">
+            <span class="user-tooltip" data-toggle="tooltip" data-placement="right" title="ユーザーページへ">
+            <% if logged_in? %>
+              <%= link_to @item.user.name, user_path(id: @item.user.id) %>
+            </span>  
+            <% else %>
+              <%= @item.user.name %>
+            <% end %>
+          </h2>
+          <%= image_tag @item.image.url %>
+          <p class=item-text>
+            [商品名] <%= @item.product %>
+          </p>
+          <p class=item-text>
+            [価格] <%= @item.price %>円
+          </p>
+          <p class=item-text>
+            [説明] <%= @item.description %>
+          </p>
+          <hr>
+          <h3>コメント</h3>
+          <% @item.comments.each do |comment| %>
+            <P><%= comment.content %></P>
+          <% end %>
+              
+          <div class="item-menus">
+            <%= link_to 'DMを送る', user_path(id: @item.user.id) %>
+          </div> 
+          <div class="item-menus">
+            <%= link_to("コメントする",comments_new_path(item_id: @item.id), {method: :get})  %>
+          </div> 
+          <div class="item-menus">
+            <% unless @item.like_users.include?(current_user) %>
+              <%= link_to("お気に入りにする",likes_path(item_id: @item.id), {method: :post}) %>
+            <% else %>
+              <%= link_to("お気に入りを取り消す",likes_path(item_id: @item.id), {method: :delete}) %>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to '<= 一覧に戻る', items_path %>
+      </div>          
+    </div>
+  </div>
+</div>
