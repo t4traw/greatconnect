@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   def index
     @search = Item.search(params[:q])
     @items = @search.result.page(params[:page]).per(6)
-    #@items = Item.page(params[:page]).per(2)
   end
   
   def new
