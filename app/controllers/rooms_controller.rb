@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     myRoomIds = []
     
     @currentEntries.each do | entry |
-      myRoomIds << entry.room.id　#myRoomIdsにentry.room.idを渡す
+      myRoomIds << entry.room.id #myRoomIdsにentry.room.idを渡す
     end
     
     @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
