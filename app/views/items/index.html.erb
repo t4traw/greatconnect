@@ -55,6 +55,7 @@
             <!--<% item.comments.each do |comment| %>-->
               <!--<P><%= comment.content %></P>-->
             <!--<% end %>-->
+            <%= link_to("詳細をみる","/items/#{item.id}", {method: :get}) %>
             <% if logged_in? %>
               <div class="item-menus">
                 <%= link_to 'DMを送る', user_path(id: item.user.id) %>
