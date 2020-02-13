@@ -82,6 +82,46 @@ class ItemsTest < ApplicationSystemTestCase
    fill_in 'item[price]', with: @item[:price]
    fill_in 'item[description]', with: @item[:description]
    click_button '投稿'
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: @item[:product]
+   fill_in 'item[price]', with: @item[:price]
+   fill_in 'item[description]', with: @item[:description]
+   click_button '投稿'
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: @item[:product]
+   fill_in 'item[price]', with: @item[:price]
+   fill_in 'item[description]', with: @item[:description]
+   click_button '投稿'
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: @item[:product]
+   fill_in 'item[price]', with: @item[:price]
+   fill_in 'item[description]', with: @item[:description]
+   click_button '投稿'
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: @item[:product]
+   fill_in 'item[price]', with: @item[:price]
+   fill_in 'item[description]', with: @item[:description]
+   click_button '投稿'
+   click_on '投稿する'
+   assert_selector "h1", text: "投稿作成"
+   find("#item_image")
+   attach_file "item[image]", "test/files/test.jpg"
+   fill_in 'item[product]', with: @item[:product]
+   fill_in 'item[price]', with: @item[:price]
+   fill_in 'item[description]', with: @item[:description]
+   click_button '投稿'
    visit items_url
    click_on '最後'
    assert_selector "h2", text: "テストユーザー"

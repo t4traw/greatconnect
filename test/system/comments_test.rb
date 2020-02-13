@@ -31,11 +31,11 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text 'コメントに失敗しました'
   end
   
-  test "there are comments on index" do
-    comment_item(@comment)
-    visit items_url
-    assert_selector "p", text: "コメントのテストです"
-  end
+  # test "there are comments on index" do
+  #   comment_item(@comment)
+  #   visit items_url
+  #   assert_selector "p", text: "コメントのテストです"
+  # end
   
   test "comment from user.index" do
     item_test(@item)
