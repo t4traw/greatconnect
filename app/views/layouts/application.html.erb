@@ -23,6 +23,7 @@
         <%= link_to root_path do %>
           <p class="navbar-brand">GreatConnect</p> 
         <% end %>
+        
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
           <span class="sr-only">メニュー</span>
           <span class="icon-bar"></span>
@@ -30,85 +31,84 @@
           <span class="icon-bar"></span>
         </button>
         
-        <div id="gnavi" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right ">
-            <% if logged_in? %>
-              <li>
-                <%= link_to root_path do %>
-                  <%= image_tag "icon/home.png" %>
-                  <p>ホーム</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_item_path do %>
-                  <%= image_tag "icon/post.png", class: "icon1" %>
-                  <p>投稿する</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to items_path do %>
-                  <%= image_tag "icon/list of posts.png", class: "icon1" %>
-                  <p>マーケット</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to rooms_path do %>
-                  <%= image_tag "icon/message3.png", class: "icon1" %>
-                  <p>メッセージ</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to likes_index_path do %>
-                  <%= image_tag "icon/favorite.png", class: "icon1" %>
-                  <p>お気に入り</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to users_path do %>
-                  <%= image_tag "icon/myposts.png", class: "icon1" %>
-                  <p>自分の投稿</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to edit_user_path(current_user) do %>
-                  <%= image_tag "icon/edit.png", class: "icon2"%>
-                  <p>ユーザー<br>情報変更</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to logout_path, method: :delete do %>
-                  <%= image_tag "icon/logout.png", class: "icon1" %>
-                  <p>ログアウト</p>
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to root_path do %>
-                  <%= image_tag "icon/home.png" %>
-                  <P>ホーム</P>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to items_path do %>
-                  <%= image_tag "icon/list of posts.png", class: "icon1" %>
-                  <p>マーケット</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_path do %>
-                  <%= image_tag "icon/post.png", class: "icon1" %>
-                  <p>新規登録</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to login_path do %>
-                  <%= image_tag "icon/login.png" %>
-                  <p>ログイン</p>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+        
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="gnavi" >
+          <% if logged_in? %>
+            <li>
+              <%= link_to root_path do %>
+                <%= image_tag "icon/home.png" %>
+                <p>ホーム</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_item_path do %>
+                <%= image_tag "icon/post.png", class: "icon1" %>
+                <p>投稿する</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to items_path do %>
+                <%= image_tag "icon/list of posts.png", class: "icon1" %>
+                <p>マーケット</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to rooms_path do %>
+                <%= image_tag "icon/message3.png", class: "icon1" %>
+                <p>メッセージ</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to likes_index_path do %>
+                <%= image_tag "icon/favorite.png", class: "icon1" %>
+                <p>お気に入り</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <%= image_tag "icon/myposts.png", class: "icon1" %>
+                <p>自分の投稿</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to edit_user_path(current_user) do %>
+                <%= image_tag "icon/edit.png", class: "icon2"%>
+                <p>ユーザー<br>情報変更</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%= image_tag "icon/logout.png", class: "icon1" %>
+                <p>ログアウト</p>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to root_path do %>
+                <%= image_tag "icon/home.png" %>
+                <P>ホーム</P>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to items_path do %>
+                <%= image_tag "icon/list of posts.png", class: "icon1" %>
+                <p>マーケット</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_path do %>
+                <%= image_tag "icon/post.png", class: "icon1" %>
+                <p>新規登録</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to login_path do %>
+                <%= image_tag "icon/login.png" %>
+                <p>ログイン</p>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </nav>
     <%= yield %>
