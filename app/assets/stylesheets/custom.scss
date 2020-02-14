@@ -98,8 +98,13 @@ h1, h2 {
   .navbar-brand {
     padding-top: 20px;
     margin-top: 15px;
+    padding-left: 100px;
     font-size: 40px;
     color: white;
+  }
+  
+  .navbar-right {
+    padding-left: 30px;
   }
 
   img {
