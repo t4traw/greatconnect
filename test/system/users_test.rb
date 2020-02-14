@@ -29,21 +29,6 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "メールアドレスはすでに存在します"
   end
   
-  # test "when the input of prefecture is Hiragana" do
-  #   visit root_url
-  #   click_on '登録する'
-  #   fill_in 'user[from]', with: "いわて"
-  #   click_button '登録'
-  #   assert_text "都道府県は不正な値です"
-  # end
-  
-  # test "incorrect prefecture input" do
-  #   visit root_url
-  #   click_on '登録する'
-  #   fill_in 'user[from]', with: "鹿児島県県"
-  #   click_button '登録'
-  #   assert_text "都道府県は4文字以内で入力してください"
-  # end
   
   test "incorrect name input" do
     visit root_url
@@ -95,6 +80,22 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     assert_selector "h1", text: "現在あなたの投稿はありません"
     click_on '投稿を作成する'
+  end
+  
+  test "visiting the edit" do
+    login_user(@user)
+    click_on 'ユーザー情報変更'
+    assert_selector "h1", text: "ユーザー情報変更画面"
+  end
+  
+  test "change user information" do
+    login_user(@user)
+    click_on 'ユーザー情報変更'
+    fill_in 'user[age]', with: 21
+    fill_in 'user[password]', with: @user[:password]
+    fill_in 'user[password_confirmation]', with: @user[:password]
+    click_button '変更する'
+    assert_text "ユーザー情報を編集しました"
   end
   
 

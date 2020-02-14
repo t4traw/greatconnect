@@ -10,7 +10,8 @@ class CommentsTest < ApplicationSystemTestCase
   
   def comment_item(comment)
     item_test(@item)
-    visit items_url 
+    visit items_url
+    click_on '詳細をみる'
     click_on "コメントする"
     assert_selector "h1", text: "コメントの投稿"
     fill_in "comment[content]", with: @comment[:content]
@@ -24,7 +25,8 @@ class CommentsTest < ApplicationSystemTestCase
   
   test "comments fail" do
     item_test(@item)
-    visit items_url 
+    visit items_url
+    click_on '詳細をみる'
     click_on "コメントする"
     assert_selector "h1", text: "コメントの投稿"
     click_button 'コメントする'

@@ -8,9 +8,9 @@ class LikesController < ApplicationController
     like.user_id = current_user.id
     like.item_id = params[:item_id]
     if like.save
-      redirect_to items_path, success: 'お気に入りに登録しました'
+      redirect_to item_path(like.item.id), success: 'お気に入りに登録しました'
     else
-      redirect_to items_path, danger: 'お気に入りに登録に失敗しました'
+      redirect_to item_path(like.item.id), danger: 'お気に入りに登録に失敗しました'
     end
   end 
   
@@ -19,9 +19,9 @@ class LikesController < ApplicationController
     like.destroy if like.present?
     
     if like.destroyed?
-      redirect_to items_path, success: 'お気に入りを解除しました'
+      redirect_to item_path(like.item.id), success: 'お気に入りを解除しました'
     else
-      redirect_to items_path, success: 'お気に入り解除に失敗しました'
+      redirect_to item_path(like.item.id), success: 'お気に入り解除に失敗しました'
     end
   end
   

@@ -22,7 +22,6 @@ class ActiveSupport::TestCase
     assert_selector "h1", text: "新規登録"
     fill_in 'user[name]', with: user[:name]
     fill_in 'user[age]', with: user[:age]
-    #fill_in 'user[from]', with: user[:from]
     select '東京都', from: '都道府県'
     fill_in 'user[email]', with: user[:email]
     fill_in 'user[password]', with: user[:password]
@@ -64,6 +63,7 @@ class ActiveSupport::TestCase
  def like_item(item)
    item_test(@item)
    visit items_url
+   click_on '詳細をみる'
    click_on "お気に入りにする"
  end
  

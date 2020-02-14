@@ -14,6 +14,21 @@ class ItemsTest < ApplicationSystemTestCase
    visit new_item_url
    assert_selector "h1", text: "投稿作成"
  end
+ 
+ test "visiting the show" do
+   item_test(@item)
+   visit items_url
+   click_on '詳細をみる'
+   assert_selector "h2",text:"テストユーザー"
+ end
+ 
+ test "Move from show to index" do
+   item_test(@item)
+   visit items_url
+   click_on '詳細をみる'
+   click_on '<= 一覧に戻る'
+   assert_selector "h2", text: "テストユーザー"
+ end
 
  test "create item" do
    item_test(@item)
@@ -132,6 +147,7 @@ class ItemsTest < ApplicationSystemTestCase
    click_on 'ログアウト'
    login_user2(@user2)
    visit items_url
+   click_on '詳細をみる'
    click_on "DMを送る"
    assert_selector "h2", text: "テストユーザーさんのページ"
  end
