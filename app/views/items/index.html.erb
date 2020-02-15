@@ -51,7 +51,7 @@
             <hr>
             
             <div class="item-menus">
-              <%= link_to("詳細をみる","/items/#{item.id}", {method: :get}) %>
+              <%= link_to "詳細をみる",item_path(id: item.id), {method: :get} %>
             </div>
           </div>
         </div>
