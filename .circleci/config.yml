@@ -13,6 +13,10 @@ jobs:
     steps:
       - checkout
       
+      
+      - run:
+         name:バンドルインストール
+         command: bundle check || bundle install
          
       - restore_cache:
          keys:
