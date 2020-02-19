@@ -30,4 +30,4 @@ jobs:
 
       - run:
           name: minitest
-          command: rails test test/system
+          command: rails test
