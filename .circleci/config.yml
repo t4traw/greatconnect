@@ -1,6 +1,7 @@
 version: 2.1
 jobs:
   build:
+  parallelism: 3 
     docker:
       - image: circleci/ruby:2.4.2-jessie-node
         environment:
@@ -13,15 +14,18 @@ jobs:
     steps:
       - checkout
       
-      
       - run:
-         name:バンドルインストール
-         command: bundle check || bundle install
-         
+          name: Bundler を指定
+          command: bundle -v
+      
       - restore_cache:
          keys:
           - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
           - rails-demo-bundle-v2-
+          
+      - run:
+         name: バンドルインストール
+         command: bundle check || bundle install
          
       - save_cache:
          key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
