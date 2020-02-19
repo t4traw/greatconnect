@@ -23,16 +23,7 @@ jobs:
          key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
          paths:
           - vendor/bundle
-          
-      - run:
-         name: DBを待機
-         command: dockerize-wait tcp://localhost:5432 -timeout 1m
          
-      - run:
-         name: データベースをセットアップ
-         command: bin/rails db:schema:load --trace
-         
-      - run: mkdir test-reports
       - run:
           name: Download Selenium
           command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
