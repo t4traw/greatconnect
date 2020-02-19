@@ -13,9 +13,6 @@ jobs:
     steps:
       - checkout
       
-      - run:
-         name: Bundlerを指定
-         command: cundle -vendor
          
       - restore_cache:
          keys:
