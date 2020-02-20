@@ -9,14 +9,14 @@
 
 # 使用技術
 
-- Ruby 2.0.1
+- Ruby 
 - Ruby on Rails 5.2.4
-- MySQL2 0.5.3
+- MySQL
 - HTML, SCSS
 - jQuery
 - AWS 
   - S3
-- GitHub
+- CircleCI
 
 # 機能一覧、使用したgemなど
 
