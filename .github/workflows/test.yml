@@ -26,19 +26,22 @@ jobs:
         echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
         curl -sL https://deb.nodesource.com/setup_12.x | bash -
         apt install -y yarn nodejs
+        
     - name: Install chrome
       run: |
         wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
         echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
         apt update -y
         apt install -y google-chrome-stable
+        
+    - name: Set up bundler
+      run: gem install bundler
+      
     - name: Build
-      run: |
-        bundle -j 4 --path vendor/bundle
-        bin/rails yarn:install db:setup assets:precompile
+      run: bundle install --jobs 4 --retry 3
+      
     - name: Run test
-      run: |
-        bin/rails test
+      run: bundle exec rails test
+      
     - name: Run system test
-      run: |
-        bin/rails test:system
+      run: bundle exec rails test:system
