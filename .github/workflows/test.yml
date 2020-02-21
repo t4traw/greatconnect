@@ -38,7 +38,9 @@ jobs:
       run: gem install bundler
       
     - name: Build
-      run: bundle install --jobs 4 --retry 3
+      run: |
+        bundle install --jobs 4 --retry 3
+         bin/rails yarn:install db:setup assets:precompile
         
     - name: Run system test
       run: |
