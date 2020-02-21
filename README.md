@@ -17,7 +17,6 @@
 - jQuery
 - AWS 
   - S3
-- CircleCI
 
 # 機能一覧、使用したgemなど
 
