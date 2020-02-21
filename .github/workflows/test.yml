@@ -39,10 +39,6 @@ jobs:
       
     - name: Build
       run: bundle install --jobs 4 --retry 3
-      
-    - name: Run test
-      run: |
-        bin/rails test
         
     - name: Run system test
       run: |
