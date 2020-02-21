@@ -41,6 +41,9 @@ jobs:
       run: |
         bundle install --jobs 4 --retry 3
          bin/rails yarn:install db:setup assets:precompile
+         
+    - name: Install selenium-webdriver
+      run: gem install selenium-webdriver:3.142.7
         
     - name: Run system test
       run: |
