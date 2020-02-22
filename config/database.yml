@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: greatconnect_production
-  username: greatconnect
-  password: <%= ENV['GREATCONNECT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
