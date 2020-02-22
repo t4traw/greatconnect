@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem 'mysql2', '>= 0.3.18', '< 0.6.0', group: :development
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -59,6 +59,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'pg'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
@@ -72,3 +76,5 @@ gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'active_hash'
+
+
