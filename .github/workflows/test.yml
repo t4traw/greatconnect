@@ -3,12 +3,16 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ruby:2.6.4
+      env:
+        RAILS_ENV: test
     steps:
       - uses: actions/checkout@v1
-      - name: Set up Ruby 2.6.3
+      - name: Set up Ruby 2.6.4
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.3
+          ruby-version: 2.6.4
       - name: Install dependent libralies
         run: sudo apt-get install libmysqlclient-dev
       - name: Set up bundler
