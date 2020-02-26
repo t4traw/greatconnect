@@ -27,6 +27,8 @@ jobs:
         echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
         apt update -y
         apt install -y google-chrome-stable
+    - name: Set up bundler
+      run: gem install bundler
     - name: Build
       run: |
         bundle -j 4
